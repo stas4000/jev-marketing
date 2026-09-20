@@ -1,0 +1,2977 @@
+{
+  "schema_version": "1.0",
+  "workflow": "search_terms",
+  "mode": "live",
+  "method": "jev",
+  "as_of": "2026-09-20",
+  "confidence_threshold": 0.7,
+  "limits": [
+    "Negative keyword candidates require human review. No keyword match types inferred and no ad accounts changed."
+  ],
+  "rows": [
+    {
+      "id": "001",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "001",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.99,
+            "probabilities": {
+              "review": 0.01,
+              "negative_candidate": 0,
+              "keep": 0.99
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "book a couch removal company in Waco",
+      "classification": "keep"
+    },
+    {
+      "id": "002",
+      "confidence": 0.89,
+      "evidence": {
+        "source_id": "002",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.89,
+            "probabilities": {
+              "review": 0.06,
+              "keep": 0.01,
+              "negative_candidate": 0.93
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "free couch pickup Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "003",
+      "confidence": 0.68,
+      "evidence": {
+        "source_id": "003",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.68,
+            "probabilities": {
+              "review": 0.78,
+              "keep": 0.21,
+              "negative_candidate": 0.01
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "Waco pickup service",
+      "classification": "review"
+    },
+    {
+      "id": "004",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "004",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 1,
+              "review": 0,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "junk removal driver jobs Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "005",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "005",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "keep": 0,
+              "review": 0,
+              "negative_candidate": 1
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "sofa removal service Austin Texas",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "006",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "006",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.98,
+            "probabilities": {
+              "review": 0.01,
+              "negative_candidate": 0.99,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "rent a dumpster Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "007",
+      "confidence": 0.97,
+      "evidence": {
+        "source_id": "007",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.97,
+            "probabilities": {
+              "negative_candidate": 0,
+              "keep": 0.98,
+              "review": 0.02
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "hire someone to haul away an old refrigerator",
+      "classification": "keep"
+    },
+    {
+      "id": "008",
+      "confidence": 0.93,
+      "evidence": {
+        "source_id": "008",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.93,
+            "probabilities": {
+              "keep": 0,
+              "negative_candidate": 0.96,
+              "review": 0.04
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "how to dispose of a mattress myself",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "009",
+      "confidence": 0.86,
+      "evidence": {
+        "source_id": "009",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.86,
+            "probabilities": {
+              "negative_candidate": 0,
+              "review": 0.91,
+              "keep": 0.09
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "average cost of junk removal",
+      "classification": "review"
+    },
+    {
+      "id": "010",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "010",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 0.99,
+              "review": 0.01,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco furniture hauling careers",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "011",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "011",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "keep": 0,
+              "review": 0.01,
+              "negative_candidate": 0.99
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "book household junk pickup Dallas",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "012",
+      "confidence": 0.96,
+      "evidence": {
+        "source_id": "012",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.96,
+            "probabilities": {
+              "review": 0.02,
+              "keep": 0,
+              "negative_candidate": 0.98
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "asbestos waste disposal Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "013",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "013",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 0,
+              "keep": 1,
+              "review": 0
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "Waco household junk pickup quote",
+      "classification": "keep"
+    },
+    {
+      "id": "014",
+      "confidence": 0.93,
+      "evidence": {
+        "source_id": "014",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.93,
+            "probabilities": {
+              "review": 0.04,
+              "negative_candidate": 0.95,
+              "keep": 0.01
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco free refrigerator collection",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "015",
+      "confidence": 0.84,
+      "evidence": {
+        "source_id": "015",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.84,
+            "probabilities": {
+              "review": 0.9,
+              "keep": 0.1,
+              "negative_candidate": 0
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "Waco cleanup",
+      "classification": "review"
+    },
+    {
+      "id": "016",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "016",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 1,
+            "probabilities": {
+              "negative_candidate": 1,
+              "review": 0,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "appliance removal job vacancies",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "017",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "017",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 1,
+              "review": 0,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "hire mattress removal in Houston",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "018",
+      "confidence": 0.91,
+      "evidence": {
+        "source_id": "018",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.91,
+            "probabilities": {
+              "negative_candidate": 0.94,
+              "review": 0.05,
+              "keep": 0.01
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco moving company for my sofa",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "019",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "019",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.98,
+            "probabilities": {
+              "keep": 0.99,
+              "review": 0.01,
+              "negative_candidate": 0
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "pay a crew to remove a broken washing machine",
+      "classification": "keep"
+    },
+    {
+      "id": "020",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "020",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.98,
+            "probabilities": {
+              "review": 0.01,
+              "negative_candidate": 0.99,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "where can I dump household junk for free",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "021",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "021",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.98,
+            "probabilities": {
+              "negative_candidate": 0.01,
+              "review": 0.98,
+              "keep": 0.01
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "what happens to old sofas",
+      "classification": "review"
+    },
+    {
+      "id": "022",
+      "confidence": 0.93,
+      "evidence": {
+        "source_id": "022",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.93,
+            "probabilities": {
+              "negative_candidate": 0.95,
+              "review": 0.05,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "junk removal company hiring Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "023",
+      "confidence": 0.96,
+      "evidence": {
+        "source_id": "023",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.96,
+            "probabilities": {
+              "negative_candidate": 0.97,
+              "review": 0.01,
+              "keep": 0.02
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Fort Worth paid refrigerator removal",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "024",
+      "confidence": 0.94,
+      "evidence": {
+        "source_id": "024",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.94,
+            "probabilities": {
+              "keep": 0,
+              "negative_candidate": 0.96,
+              "review": 0.04
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "hire house cleaning in Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "025",
+      "confidence": 0.88,
+      "evidence": {
+        "source_id": "025",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.88,
+            "probabilities": {
+              "keep": 0.93,
+              "negative_candidate": 0,
+              "review": 0.07
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "schedule mattress haul away Waco Texas",
+      "classification": "keep"
+    },
+    {
+      "id": "026",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "026",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "review": 0.01,
+              "keep": 0,
+              "negative_candidate": 0.99
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "DIY sofa dismantling and disposal guide",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "027",
+      "confidence": 0.77,
+      "evidence": {
+        "source_id": "027",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.77,
+            "probabilities": {
+              "keep": 0,
+              "review": 0.85,
+              "negative_candidate": 0.15
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "are mattresses recyclable",
+      "classification": "review"
+    },
+    {
+      "id": "028",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "028",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 1,
+            "probabilities": {
+              "negative_candidate": 1,
+              "review": 0,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "how to apply for a junk hauling job",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "029",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "029",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.98,
+            "probabilities": {
+              "review": 0.01,
+              "keep": 0,
+              "negative_candidate": 0.99
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "San Antonio furniture hauling company",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "030",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "030",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 1,
+            "probabilities": {
+              "negative_candidate": 1,
+              "review": 0,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco tow truck for a broken car",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "031",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "031",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 1,
+            "probabilities": {
+              "keep": 1,
+              "review": 0,
+              "negative_candidate": 0
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "junk removal company Waco",
+      "classification": "keep"
+    },
+    {
+      "id": "032",
+      "confidence": 0.94,
+      "evidence": {
+        "source_id": "032",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.94,
+            "probabilities": {
+              "negative_candidate": 0.96,
+              "review": 0.03,
+              "keep": 0.01
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "no cost furniture removal Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "033",
+      "confidence": 0.64,
+      "evidence": {
+        "source_id": "033",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.64,
+            "probabilities": {
+              "negative_candidate": 0,
+              "keep": 0.76,
+              "review": 0.24
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "Waco hauling",
+      "classification": "keep"
+    },
+    {
+      "id": "034",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "034",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.98,
+            "probabilities": {
+              "review": 0.01,
+              "keep": 0,
+              "negative_candidate": 0.99
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco rubbish removal driver salary",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "035",
+      "confidence": 0.48,
+      "evidence": {
+        "source_id": "035",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.48,
+            "probabilities": {
+              "keep": 0.18,
+              "review": 0.17,
+              "negative_candidate": 0.65
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "quote for household junk removal Temple Texas",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "036",
+      "confidence": 0.96,
+      "evidence": {
+        "source_id": "036",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.96,
+            "probabilities": {
+              "negative_candidate": 0.97,
+              "keep": 0,
+              "review": 0.03
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "paid chemical waste pickup Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "037",
+      "confidence": 0.66,
+      "evidence": {
+        "source_id": "037",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.66,
+            "probabilities": {
+              "review": 0.22,
+              "negative_candidate": 0,
+              "keep": 0.78
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "hire furniture disposal service for my apartment",
+      "classification": "keep"
+    },
+    {
+      "id": "038",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "038",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 0.99,
+              "review": 0.01,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "free charity pickup of a dining table",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "039",
+      "confidence": 0.86,
+      "evidence": {
+        "source_id": "039",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.86,
+            "probabilities": {
+              "keep": 0,
+              "review": 0.91,
+              "negative_candidate": 0.09
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "appliance disposal rules",
+      "classification": "review"
+    },
+    {
+      "id": "040",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "040",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "review": 0.01,
+              "negative_candidate": 0.99,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "part time junk removal work Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "041",
+      "confidence": 0.89,
+      "evidence": {
+        "source_id": "041",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.89,
+            "probabilities": {
+              "negative_candidate": 0.93,
+              "review": 0.05,
+              "keep": 0.02
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Killeen sofa pickup company",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "042",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "042",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 1,
+            "probabilities": {
+              "negative_candidate": 1,
+              "review": 0,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "book an apartment moving service",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "043",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "043",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.98,
+            "probabilities": {
+              "review": 0.01,
+              "keep": 0.99,
+              "negative_candidate": 0
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "book household clutter removal in Waco",
+      "classification": "keep"
+    },
+    {
+      "id": "044",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "044",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "review": 0.01,
+              "keep": 0,
+              "negative_candidate": 0.99
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "how to haul my own junk to the dump",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "045",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "045",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.98,
+            "probabilities": {
+              "negative_candidate": 0,
+              "review": 0.99,
+              "keep": 0.01
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "is junk removal expensive",
+      "classification": "review"
+    },
+    {
+      "id": "046",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "046",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 1,
+            "probabilities": {
+              "keep": 0,
+              "negative_candidate": 1,
+              "review": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "furniture disposal crew jobs",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "047",
+      "confidence": 0.43,
+      "evidence": {
+        "source_id": "047",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.43,
+            "probabilities": {
+              "review": 0.11,
+              "negative_candidate": 0.27,
+              "keep": 0.62
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "book old appliance removal in Belton",
+      "classification": "keep"
+    },
+    {
+      "id": "048",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "048",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 0.99,
+              "keep": 0,
+              "review": 0.01
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco carpet steam cleaning company",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "049",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "049",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 1,
+            "probabilities": {
+              "keep": 1,
+              "review": 0,
+              "negative_candidate": 0
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "Waco sofa and armchair removal service",
+      "classification": "keep"
+    },
+    {
+      "id": "050",
+      "confidence": 0.92,
+      "evidence": {
+        "source_id": "050",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.92,
+            "probabilities": {
+              "keep": 0,
+              "review": 0.05,
+              "negative_candidate": 0.95
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco free bulky item collection day",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "051",
+      "confidence": 0.71,
+      "evidence": {
+        "source_id": "051",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.71,
+            "probabilities": {
+              "keep": 0,
+              "review": 0.81,
+              "negative_candidate": 0.19
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "old furniture ideas",
+      "classification": "review"
+    },
+    {
+      "id": "052",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "052",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 0.99,
+              "review": 0.01,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "junk hauling jobs no experience",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "053",
+      "confidence": 0.95,
+      "evidence": {
+        "source_id": "053",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.95,
+            "probabilities": {
+              "keep": 0.01,
+              "review": 0.02,
+              "negative_candidate": 0.97
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Round Rock junk hauling from my house",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "054",
+      "confidence": 0.96,
+      "evidence": {
+        "source_id": "054",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.96,
+            "probabilities": {
+              "review": 0.02,
+              "negative_candidate": 0.98,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "weekend dumpster rental for household junk",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "055",
+      "confidence": 0.97,
+      "evidence": {
+        "source_id": "055",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.97,
+            "probabilities": {
+              "negative_candidate": 0,
+              "review": 0.02,
+              "keep": 0.98
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "paid collection of unwanted kitchen appliances",
+      "classification": "keep"
+    },
+    {
+      "id": "056",
+      "confidence": 0.93,
+      "evidence": {
+        "source_id": "056",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.93,
+            "probabilities": {
+              "review": 0.05,
+              "keep": 0,
+              "negative_candidate": 0.95
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "give away old armchair free pickup",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "057",
+      "confidence": 0.43,
+      "evidence": {
+        "source_id": "057",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.43,
+            "probabilities": {
+              "negative_candidate": 0.04,
+              "review": 0.63,
+              "keep": 0.33
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "Waco bulk collection",
+      "classification": "review"
+    },
+    {
+      "id": "058",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "058",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "negative_candidate": 0.99,
+              "review": 0.01,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco junk removal employment agency",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "059",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "059",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "review": 0.01,
+              "negative_candidate": 0.99,
+              "keep": 0
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Georgetown Texas furniture removal service",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "060",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "060",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 1,
+            "probabilities": {
+              "review": 0,
+              "keep": 0,
+              "negative_candidate": 1
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Waco vehicle towing service",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "061",
+      "confidence": 1,
+      "evidence": {
+        "source_id": "061",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 1,
+            "probabilities": {
+              "keep": 1,
+              "review": 0,
+              "negative_candidate": 0
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "quote to clear old furniture from my Waco home",
+      "classification": "keep"
+    },
+    {
+      "id": "062",
+      "confidence": 0.95,
+      "evidence": {
+        "source_id": "062",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.95,
+            "probabilities": {
+              "review": 0.03,
+              "keep": 0.01,
+              "negative_candidate": 0.96
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "free washing machine haul away",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "063",
+      "confidence": 0.98,
+      "evidence": {
+        "source_id": "063",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.98,
+            "probabilities": {
+              "keep": 0.02,
+              "negative_candidate": 0,
+              "review": 0.98
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "how does junk removal pricing work",
+      "classification": "review"
+    },
+    {
+      "id": "064",
+      "confidence": 0.99,
+      "evidence": {
+        "source_id": "064",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.99,
+            "probabilities": {
+              "keep": 0,
+              "review": 0,
+              "negative_candidate": 1
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "appliance pickup driver vacancies Waco",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "065",
+      "confidence": 0.77,
+      "evidence": {
+        "source_id": "065",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "negative_candidate",
+            "confidence": 0.77,
+            "probabilities": {
+              "keep": 0.1,
+              "negative_candidate": 0.85,
+              "review": 0.05
+            }
+          }
+        }
+      },
+      "decision": "negative_candidate",
+      "query": "Bryan Texas household junk removal",
+      "classification": "negative_candidate"
+    },
+    {
+      "id": "066",
+      "confidence": 0.2,
+      "evidence": {
+        "source_id": "066",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "review",
+            "confidence": 0.2,
+            "probabilities": {
+              "negative_candidate": 0.34,
+              "review": 0.47000000000000003,
+              "keep": 0.19
+            }
+          }
+        }
+      },
+      "decision": "review",
+      "query": "hire someone to transport my fridge to a new home",
+      "classification": "review"
+    },
+    {
+      "id": "067",
+      "confidence": 0.96,
+      "evidence": {
+        "source_id": "067",
+        "input_fields": [
+          "id",
+          "query",
+          "impressions",
+          "clicks",
+          "cost",
+          "conversions"
+        ],
+        "answers": {
+          "relevance": {
+            "type": "choice",
+            "choice": "keep",
+            "confidence": 0.96,
+            "probabilities": {
+              "keep": 0.97,
+              "review": 0.03,
+              "negative_candidate": 0
+            }
+          }
+        }
+      },
+      "decision": "keep",
+      "query": "hire a team to take away a broken bed frame",
+      "classification": "keep"
+    }
+  ],
+  "usage": {
+    "calls": 67,
+    "input_tokens": 49063,
+    "output_tokens": 2842,
+    "cost": 0.002060646,
+    "seconds": null,
+    "elapsed_seconds": 29.087598429061472,
+    "receipts": [
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4590230714529753,
+        "input_tokens": 734,
+        "output_tokens": 41,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912040-8QhWtajDsXddD4Ub7oRV"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.5033858083188534,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912041-OPW6Ixx0ZLCKmZHDPY5z"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.39162489864975214,
+        "input_tokens": 730,
+        "output_tokens": 42,
+        "cost": 3.066e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912041-OsbpXBm4WfpZtpaCICDM"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.38147715758532286,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912042-iuvy3Yooz8Val3Ht54AG"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4033231558278203,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912042-qt2jdLi7PYpGawVtKFxo"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.46798281744122505,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912042-QMLuFtvR1aYicNtGlgdd"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4689332926645875,
+        "input_tokens": 734,
+        "output_tokens": 41,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912043-CFJ2nsmelhQLU19ELgXL"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.41254665330052376,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912043-j7ZpllQMX7FyKpvJS3Jv"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.6962147690355778,
+        "input_tokens": 731,
+        "output_tokens": 42,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912044-RIxodD22a5K9QYaztJee"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4251372953876853,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912045-lLeuOAMlFoFAc5vWgwVt"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4286981103941798,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912045-9r4JA0Zh4KUsGb9zIXGI"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.433812384493649,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912045-ybGMHXBLwd8iTkDwcXiA"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4865313423797488,
+        "input_tokens": 732,
+        "output_tokens": 41,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912046-y2WROS33y0rwGKVh6vGd"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.40037679858505726,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912046-JUaPgbgmiatVwcJLS8AX"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3947942918166518,
+        "input_tokens": 729,
+        "output_tokens": 42,
+        "cost": 3.0618e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912047-H5XcbddRK05GMLrStzmn"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4350658431649208,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912047-MqnQfn3twA1vD1K2NaOw"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3949079802259803,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912048-RIs4QAewT9dGcN63mad7"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.5124933132901788,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912048-3f1PuOZZRG1s40hrVfvT"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4277775501832366,
+        "input_tokens": 735,
+        "output_tokens": 41,
+        "cost": 3.087e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912049-WUjB6VEoAQygMryWTefT"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.38087252248078585,
+        "input_tokens": 734,
+        "output_tokens": 43,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912049-admspZVOwBSwLiuOplJL"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.42719112522900105,
+        "input_tokens": 731,
+        "output_tokens": 42,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912049-ti0zEK5bQZ89GAl9bU00"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4021779326722026,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912050-Rs0WGD4Sy1vk7jZuXmKJ"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.42874516267329454,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912050-4NM1uned4wc6kQEFph6S"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.376694168895483,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912051-ic02G9psEb8cEvL7yJyV"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4976392947137356,
+        "input_tokens": 733,
+        "output_tokens": 41,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912051-D52jeWd2fVOzYdmUuRpb"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.41154666896909475,
+        "input_tokens": 734,
+        "output_tokens": 43,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912052-pOL22mDX4C4XUIkTRuaz"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.42396905459463596,
+        "input_tokens": 731,
+        "output_tokens": 42,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912052-kXMWSixQtUje2YsqGCsz"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.42318623419851065,
+        "input_tokens": 734,
+        "output_tokens": 43,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912052-27ye9s5hLAFzwzNIChEI"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.39783927239477634,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912053-YjcrVSdycGVUhoNmSfqd"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.5239599272608757,
+        "input_tokens": 734,
+        "output_tokens": 43,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912053-RXE4LKA7k4FMWQoeBDcg"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4161992408335209,
+        "input_tokens": 731,
+        "output_tokens": 41,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912054-LPcwvVA4gtNjVerE5dm5"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.39868133794516325,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912054-oPhznPTl9TlS4RDUMROX"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4175076661631465,
+        "input_tokens": 729,
+        "output_tokens": 41,
+        "cost": 3.0618e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912055-WOTEJ84E5nAbIihpm4Jh"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3998127970844507,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912055-qP0aVYKDOPWUirPEBJ0Q"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.41141845751553774,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912055-5mwS0zdgsKVK0WXT21R3"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4848534082993865,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912056-CS116P83pGRVeqKYrbj8"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.38299472723156214,
+        "input_tokens": 733,
+        "output_tokens": 41,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912056-DNx39YL7W9qcZjxY21uf"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4295461345463991,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912057-ooGXBb9UMEehJPAzWN2v"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3817287581041455,
+        "input_tokens": 731,
+        "output_tokens": 42,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912057-nLXLSE7ZZ5gtTgs4myWT"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.9707576092332602,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912058-owGA6fLK2a8LQi6bB5uq"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4253424135968089,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912059-YDzQd5qg7G2aRWpXe1vt"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4088241122663021,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912059-CqKGiQD7nT6JbhFbtBI5"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.41312663815915585,
+        "input_tokens": 733,
+        "output_tokens": 41,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912059-acQCXR4L2D7FczgTrMi7"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.39795016404241323,
+        "input_tokens": 735,
+        "output_tokens": 43,
+        "cost": 3.087e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912060-9MCuCGewaeJTSwyqaxfy"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.401176399551332,
+        "input_tokens": 730,
+        "output_tokens": 42,
+        "cost": 3.066e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912060-TfAujzaAF5eLWdlod1g7"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3968745619058609,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912061-jEUbvYeuUBBlddXDACGH"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.42055227514356375,
+        "input_tokens": 733,
+        "output_tokens": 41,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912061-TAzblrUYn3HAiRGpZZJd"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3965302547439933,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912062-JgDFCnCp9ggTvfLZd5vr"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.43129200395196676,
+        "input_tokens": 734,
+        "output_tokens": 41,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912062-KxvsR8cfhf5XgK3nZ6qr"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4988473020493984,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912062-ey9KyfL0j3EExrc7z7LI"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.45260342489928007,
+        "input_tokens": 729,
+        "output_tokens": 42,
+        "cost": 3.0618e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912063-DHYuyrbxyYrfJOIoFABs"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.39687146805226803,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912063-OAGtm5PufQMhwziFf9Ci"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.38638914190232754,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912064-hJTFj24sBG4UuRy7lYEn"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.47191736474633217,
+        "input_tokens": 734,
+        "output_tokens": 43,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912064-vg6zGZgIO0vNlD5A6bjk"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.40644574351608753,
+        "input_tokens": 732,
+        "output_tokens": 41,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912065-b8ooAllegRt6yLMGVi2F"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.40007069893181324,
+        "input_tokens": 733,
+        "output_tokens": 43,
+        "cost": 3.0786e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912065-Q2iQicB5tBLMMrvZ0EBl"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3770858710631728,
+        "input_tokens": 730,
+        "output_tokens": 42,
+        "cost": 3.066e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912065-Dy2pJLgdyfSi6t3phrlp"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.43224338814616203,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912066-jA9mJZOIbHb15UKvTTPs"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3657914949581027,
+        "input_tokens": 734,
+        "output_tokens": 43,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912066-XyW2hr1QucSFBu01EZxi"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3922250149771571,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912067-nL1i7Ns6V43mukGimbop"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3907600147649646,
+        "input_tokens": 736,
+        "output_tokens": 41,
+        "cost": 3.0912e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912067-uN7315Zwkv17qU9ULeaJ"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.45413039065897465,
+        "input_tokens": 731,
+        "output_tokens": 43,
+        "cost": 3.0702e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912068-wKYXESXsVj2pGKdBY3pp"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.42500719893723726,
+        "input_tokens": 732,
+        "output_tokens": 42,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912068-n8R3cTvLqnUk28RuUiCZ"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.36539730802178383,
+        "input_tokens": 734,
+        "output_tokens": 43,
+        "cost": 3.0828e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912068-lBoFTU0hqq8ivghw2LOI"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3942656023427844,
+        "input_tokens": 732,
+        "output_tokens": 43,
+        "cost": 3.0744e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912069-EG4r0hT2kNESuAW5so3j"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.3883953485637903,
+        "input_tokens": 736,
+        "output_tokens": 42,
+        "cost": 3.0912e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912069-qbVDGUdl2c43o0rdAw2c"
+      },
+      {
+        "provider": "openrouter-receipt-replay",
+        "calls": 1,
+        "elapsed_seconds": 0.4860547939315438,
+        "input_tokens": 736,
+        "output_tokens": 41,
+        "cost": 3.0912e-05,
+        "seconds": null,
+        "model": "typesafe/jev-1.13-20260917",
+        "request_id": "gen-dec-1789912070-gI3D14OpsEfF6J02B5le"
+      }
+    ]
+  },
+  "negative_keyword_candidates": [
+    {
+      "id": "002",
+      "query": "free couch pickup Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "004",
+      "query": "junk removal driver jobs Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "005",
+      "query": "sofa removal service Austin Texas",
+      "requires_human_review": true
+    },
+    {
+      "id": "006",
+      "query": "rent a dumpster Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "008",
+      "query": "how to dispose of a mattress myself",
+      "requires_human_review": true
+    },
+    {
+      "id": "010",
+      "query": "Waco furniture hauling careers",
+      "requires_human_review": true
+    },
+    {
+      "id": "011",
+      "query": "book household junk pickup Dallas",
+      "requires_human_review": true
+    },
+    {
+      "id": "012",
+      "query": "asbestos waste disposal Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "014",
+      "query": "Waco free refrigerator collection",
+      "requires_human_review": true
+    },
+    {
+      "id": "016",
+      "query": "appliance removal job vacancies",
+      "requires_human_review": true
+    },
+    {
+      "id": "017",
+      "query": "hire mattress removal in Houston",
+      "requires_human_review": true
+    },
+    {
+      "id": "018",
+      "query": "Waco moving company for my sofa",
+      "requires_human_review": true
+    },
+    {
+      "id": "020",
+      "query": "where can I dump household junk for free",
+      "requires_human_review": true
+    },
+    {
+      "id": "022",
+      "query": "junk removal company hiring Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "023",
+      "query": "Fort Worth paid refrigerator removal",
+      "requires_human_review": true
+    },
+    {
+      "id": "024",
+      "query": "hire house cleaning in Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "026",
+      "query": "DIY sofa dismantling and disposal guide",
+      "requires_human_review": true
+    },
+    {
+      "id": "028",
+      "query": "how to apply for a junk hauling job",
+      "requires_human_review": true
+    },
+    {
+      "id": "029",
+      "query": "San Antonio furniture hauling company",
+      "requires_human_review": true
+    },
+    {
+      "id": "030",
+      "query": "Waco tow truck for a broken car",
+      "requires_human_review": true
+    },
+    {
+      "id": "032",
+      "query": "no cost furniture removal Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "034",
+      "query": "Waco rubbish removal driver salary",
+      "requires_human_review": true
+    },
+    {
+      "id": "036",
+      "query": "paid chemical waste pickup Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "038",
+      "query": "free charity pickup of a dining table",
+      "requires_human_review": true
+    },
+    {
+      "id": "040",
+      "query": "part time junk removal work Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "041",
+      "query": "Killeen sofa pickup company",
+      "requires_human_review": true
+    },
+    {
+      "id": "042",
+      "query": "book an apartment moving service",
+      "requires_human_review": true
+    },
+    {
+      "id": "044",
+      "query": "how to haul my own junk to the dump",
+      "requires_human_review": true
+    },
+    {
+      "id": "046",
+      "query": "furniture disposal crew jobs",
+      "requires_human_review": true
+    },
+    {
+      "id": "048",
+      "query": "Waco carpet steam cleaning company",
+      "requires_human_review": true
+    },
+    {
+      "id": "050",
+      "query": "Waco free bulky item collection day",
+      "requires_human_review": true
+    },
+    {
+      "id": "052",
+      "query": "junk hauling jobs no experience",
+      "requires_human_review": true
+    },
+    {
+      "id": "053",
+      "query": "Round Rock junk hauling from my house",
+      "requires_human_review": true
+    },
+    {
+      "id": "054",
+      "query": "weekend dumpster rental for household junk",
+      "requires_human_review": true
+    },
+    {
+      "id": "056",
+      "query": "give away old armchair free pickup",
+      "requires_human_review": true
+    },
+    {
+      "id": "058",
+      "query": "Waco junk removal employment agency",
+      "requires_human_review": true
+    },
+    {
+      "id": "059",
+      "query": "Georgetown Texas furniture removal service",
+      "requires_human_review": true
+    },
+    {
+      "id": "060",
+      "query": "Waco vehicle towing service",
+      "requires_human_review": true
+    },
+    {
+      "id": "062",
+      "query": "free washing machine haul away",
+      "requires_human_review": true
+    },
+    {
+      "id": "064",
+      "query": "appliance pickup driver vacancies Waco",
+      "requires_human_review": true
+    },
+    {
+      "id": "065",
+      "query": "Bryan Texas household junk removal",
+      "requires_human_review": true
+    }
+  ]
+}

@@ -3,149 +3,130 @@
   const $ = id => document.getElementById(id);
   const film = new URLSearchParams(location.search).has('film');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.body.classList.toggle('film', film);
-  const keys = ['jev', 'opus'];
+  const keys = ['jev', 'opus'], queues = ['keep', 'negative_candidate', 'review'];
+  const labels = {keep:'Useful traffic',negative_candidate:'Negative candidate',review:'Needs judgment'};
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const money = value => '$' + Number(value || 0).toFixed(6);
-  const fmt = value => Number(value).toFixed(2);
-  const decision = result => typeof result.decision === 'object' ? result.decision.action || result.decision.decision : result.decision;
-  const query = row => typeof row.input === 'object' ? row.input.search_term || row.input.searchTerm || row.input.query || row.label : row.input;
-  let data, origin, duration, selected = 0, current = 0, playing = false, lastTick = 0, cells = [], summaryStart, raceSeconds;
-  const canvas = $('flow'), ctx = canvas.getContext('2d');
-  function flow(t, inRace) {
-    if (reduced && !film) return;
-    const w = innerWidth, h = innerHeight;
-    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
-    ctx.clearRect(0, 0, w, h);
-    // Parallel paths echo the two independent request queues; frame time drives every position.
-    for (let lane = 0; lane < 2; lane++) {
-      ctx.strokeStyle = lane ? '#a06d46' : '#669c54';
-      ctx.lineWidth = film ? 1.7 : 1;
-      for (let j = 0; j < 5; j++) {
-        const y = ((j * 271 + t * (inRace ? 27 : 18) + lane * 97) % (h + 260)) - 130;
-        ctx.globalAlpha = .11 + j * .025;
-        ctx.beginPath(); ctx.moveTo(-100,y);ctx.bezierCurveTo(w*.25,y-170,w*.65,y+220,w+100,y-20);ctx.stroke();
-      }
-    }
-    ctx.globalAlpha = 1;
+  const money = value => '$' + Number(value).toFixed(6);
+  const query = row => typeof row.input === 'string' ? row.input : row.input.search_term || row.input.query || row.label;
+  const costLabel = key => data.models[key].cost_basis.some(basis=>basis.includes('estimated')) ? 'estimated API cost' : 'provider API cost';
+  const complete = (call, at) => call?.status === 'complete' && call.end <= Math.min(30, at);
+  const confidence = value => Number.isFinite(value) ? (value*100).toFixed(1)+'% confidence (not calibrated)' : 'Confidence not returned';
+  const ease = x => 1-Math.pow(1-Math.max(0,Math.min(1,x)),3);
+  let data, current=0, playing=false, lastTick=0, selected=0, filter='all', productById, ordered, lastListKey='', focusId=null;
+  document.body.classList.toggle('film',film);
+  function modelState(key,at) {
+    const finished=data.rows.filter(row=>complete(row[key],at));
+    return {completed:finished.length,costUSD:finished.reduce((sum,row)=>sum+row[key].costUSD,0)};
   }
-  function resultHTML(row, key, at) {
-    const r = row[key], done = at >= r.end - origin;
-    if (!done) return `<article class="result-card ${key}"><h3>${escape(data.models[key].label)}</h3><span class="status">${at >= r.start - origin ? 'Processing this input' : 'Queued in the recorded run'}</span><p>Seek past ${fmt(r.end - origin)} s to reveal the recorded result.</p></article>`;
-    return `<article class="result-card ${key}"><h3>${escape(data.models[key].label)}</h3><span class="status done ${escape(String(decision(r)).toLowerCase())}">${escape(decision(r))}</span><p>${escape(r.reason || r.rationale || '')}</p><p>${fmt(r.latency)} s response latency · ${money(r.costUSD)} ${escape(r.cost_basis || data.models[key].cost_basis)}</p><p class="receipt">Started +${fmt(r.start-origin)} s · completed +${fmt(r.end-origin)} s<br>${Number(r.inputTokens)} input / ${Number(r.outputTokens)} output tokens<br>Receipt: ${escape(r.requestId || 'not supplied')}</p></article>`;
+  function resultHTML(row,key) {
+    const call=row[key], shown=call?.status==='complete' && (call.end<=Math.min(current,30) || (current>=30&&call.end>30));
+    if(!shown)return `<section class="result-card ${key}"><h4>${escape(data.models[key].label)}</h4><p>${call?.start<=Math.min(current,30)?'Request in flight at this moment.':'Not completed at this replay time.'}</p></section>`;
+    const product=key==='jev'?productById.get(row.id):null;
+    return `<section class="result-card ${key}"><h4>${escape(data.models[key].label)}${call.end>30?' · outside 30-second window':''}</h4><p class="decision">Actual classification: ${escape(call.decision)}</p>${product?`<p>Product route: ${escape(labels[product.decision])}</p>`:''}<p>${escape(confidence(call.confidence))}</p><p>${money(call.costUSD)} ${escape(call.cost_basis)} · ${call.latency.toFixed(3)} s latency</p><p class="receipt">Started +${call.start.toFixed(3)} s · completed +${call.end.toFixed(3)} s<br>Provider receipt: ${escape(call.requestId)}</p>${product?`<details><summary>Product evidence</summary><pre>${escape(JSON.stringify(product.evidence,null,2))}</pre></details>`:''}</section>`;
   }
   function inspect(index) {
-    selected = index;
-    const row = data.rows[index];
-    $('selected-title').textContent = query(row);
-    $('selected-position').textContent = `Input ${index+1} of ${data.rows.length} · Authored reference: ${row.expectedDecision}`;
-    const input = typeof row.input === 'object' ? row.input : {input: row.input};
-    $('selected-input').innerHTML = '<dl>' + Object.entries(input).map(([key,value]) => `<dt>${escape(key.replace(/_/g,' '))}</dt><dd>${escape(typeof value === 'object' ? JSON.stringify(value) : value)}</dd>`).join('') + '</dl>';
-    document.querySelectorAll('.term-row').forEach((el,i) => {el.classList.toggle('selected', i === index);el.querySelector('button').setAttribute('aria-pressed', String(i === index));});
-    $('selected-results').innerHTML = keys.map(key => resultHTML(row,key,current)).join('');
+    selected=index; const row=data.rows[index];
+    $('selected-position').textContent=`SYNTHETIC INPUT ${index+1} / ${data.rows.length} · ${row.id}`;
+    $('selected-title').textContent=query(row);
+    $('selected-reference').textContent=`Authored reviewer reference: ${row.expectedDecision}. ${row.reason} This is not a model-generated rationale.`;
+    $('selected-input').textContent=JSON.stringify(row.input,null,2);
+    $('selected-results').innerHTML=keys.map(key=>resultHTML(row,key)).join('');
+    document.querySelectorAll('.record').forEach(el=>el.setAttribute('aria-pressed',String(Number(el.dataset.index)===index)));
   }
-  function laneState(key, at) {
-    const m = data.models[key], absolute = origin + at;
-    const finished = data.rows.filter(row => row[key].end <= absolute);
-    return {completed:finished.length, costUSD:finished.reduce((sum,row)=>sum+Number(row[key].costUSD || 0),0), clock: Math.max(0,Math.min(absolute,m.end)-m.start), decisions:data.rows.map(row=>absolute >= row[key].end ? decision(row[key]) : null)};
+  function recordList(at) {
+    const signature=keys.map(key=>modelState(key,at).completed).join(':')+':'+filter+':'+(at>=30);
+    if(signature===lastListKey)return;lastListKey=signature;
+    const rows=data.rows.map((row,index)=>({row,index,product:productById.get(row.id)})).filter(({product})=>filter==='all'||(product&&product.end<=Math.min(at,30)&&product.decision===filter));
+    $('records').innerHTML=rows.length?rows.map(({row,index,product})=>`<button class="record" data-index="${index}" aria-pressed="${index===selected}"><strong>${String(index+1).padStart(2,'0')} · ${escape(query(row))}</strong><span>${product&&product.end<=Math.min(at,30)?escape(labels[product.decision]):'Awaiting in-window JEV result'} · ${escape(row.category)}</span></button>`).join(''):'<p class="inspect-note">No completed results in this queue at this time.</p>';
+    $('records').querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{inspect(Number(button.dataset.index));render(current)}));
   }
-  function render(at, visualTime = at) {
-    current = Math.max(0, Math.min(duration, at));
-    const state = {ready:true,playing,film,time:current,duration,selected,models:{},raceSeconds,summaryStart};
-    keys.forEach(key => {
-      const lane = laneState(key,current); state.models[key] = lane;
-      $(key+'-clock').innerHTML = `${fmt(lane.clock)}<span>s</span>`;
-      $(key+'-count').textContent = `${lane.completed} / ${data.rows.length}`;
-      $(key+'-cost').textContent = money(lane.costUSD);
-      $(key+'-progress').style.transform = `scaleX(${lane.completed/data.rows.length})`;
+  function renderFeed(at) {
+    // Every card maps to a real request. Position interpolates between recorded starts.
+    const started=data.rows.filter(row=>row.jev?.start<=Math.min(30,at));
+    let index=Math.max(0,started.length-1);
+    const here=data.rows[index]?.jev?.start||0, next=data.rows[index+1]?.jev?.start;
+    const fraction=Number.isFinite(next)?Math.max(0,Math.min(1,(at-here)/(next-here))):Math.min(.95,Math.max(0,(at-here)/3));
+    const cardWidth=film?370:innerWidth<=700?297:350;
+    const pose=reduced&&!film?index:index+fraction;
+    // The current input stays visible while the completed inputs move left.
+    $('input-track').style.transform=`translateX(${-Math.max(0,pose-1)*cardWidth}px)`;
+    for(const q of queues) {
+      const done=ordered.filter(row=>row.decision===q&&row.end<=Math.min(30,at));
+      $('count-'+q).textContent=done.length;
+      const container=$('feed-'+q), height=film?65:innerWidth<=700?56:61;
+      const shift=done.length&&(reduced&&!film?1:ease((at-done.at(-1).end)/.3));
+      container.innerHTML=done.length?done.slice(-4).reverse().map((row,i)=>{
+        const arrive=reduced&&!film?1:ease((at-row.end)/.3);
+        return `<div class="queue-card" style="transform:translateY(${i*height-(1-shift)*height}px);opacity:${arrive}"><strong>${escape(row.query)}</strong><small>${escape(row.id)} · ${Number.isFinite(row.confidence)?(row.confidence*100).toFixed(1)+'% confidence':'confidence unavailable'}</small></div>`;
+      }).join(''):'<p class="queue-empty">Waiting for a recorded result…</p>';
+      const p=((at*.9+queues.indexOf(q)*.31)%1), target=216+queues.indexOf(q)*432;
+      $('packet-'+q).setAttribute('cx',String(648+(target-648)*ease(Math.min(1,p*1.5))));
+      $('packet-'+q).setAttribute('cy',String(48*p));
+      $('packet-'+q).style.opacity=at<30?'0.8':'0';
+    }
+  }
+  function renderReference(at) {
+    const finished=ordered.filter(row=>row.end<=Math.min(30,at));
+    // A four-second reading beat is independent of the faster receipt feed.
+    const beat=Math.floor(Math.max(0,at-1)/4)*4+1;
+    const eligible=finished.filter(row=>row.end<=beat);
+    const disputed=finished.find(row=>row.referenceDecision==='EXCLUDE'&&row.classification==='keep'&&row.decision==='review');
+    const focus=disputed&&at>=disputed.end+.1&&at<disputed.end+5?disputed:eligible.at(-1)||finished[0];
+    if(!focus){focusId=null;$('focus-label').textContent='BUSINESS CONTEXT';$('focus-query').textContent='A search term is more than a keyword.';$('focus-decision').textContent='Actual results appear as their API responses finish.';$('focus-reason').textContent='A paid junk-removal service in Waco. Buyer intent, job searches and uncertain requests need different next steps.';return}
+    focusId=focus.id;
+    $('focus-label').textContent='ONE RECORDED RESULT / '+focus.id;
+    $('focus-query').textContent='“'+focus.query+'”';
+    $('focus-decision').textContent=focus.confidence<data.product.confidenceThreshold?`Low confidence ${(focus.confidence*100).toFixed(0)}% → human review · raw JEV: ${focus.classification}`:`Actual JEV: ${focus.classification.replaceAll('_',' ')} → ${labels[focus.decision]}`;
+    $('focus-reason').textContent=focus.referenceReason;
+  }
+  function render(at) {
+    current=Math.max(0,Math.min(36,at));
+    const state={ready:true,time:current,duration:36,windowSeconds:30,playing,selected,filter,film,phase:current>=30?'outcome':'work',models:{},counts:{},focusId:null};
+    keys.forEach(key=>{
+      const lane=modelState(key,current);state.models[key]=lane;
+      $(key+'-count').textContent=lane.completed;
+      $(key+'-cost').textContent=money(lane.costUSD);
+      $(key+'-unit').textContent=lane.completed?`${money(lane.costUSD/lane.completed)} / decision · ${costLabel(key)}`:'Cost / decision appears on completion';
+      const active=data.rows.find(row=>row[key]?.start<=Math.min(current,30)&&row[key]?.end>Math.min(current,30));
+      $(key+'-active').textContent=current>=30?(data.models[key].inflightCompleted+' request finished after the window'):active?`${(current-active[key].start).toFixed(2)} s processing · ${query(active)}`:'Waiting for next recorded request';
     });
-    data.rows.forEach((row,i)=>keys.forEach(key=>{
-      const r=row[key], cell=cells[i][key], elapsed=current+origin-r.start;
-      const done = current+origin >= r.end, active = elapsed >=0 && !done;
-      const text=done ? decision(r) : active ? 'PROCESSING' : 'QUEUED';
-      cell.status.textContent = text;
-      cell.status.className = 'status '+(done ? 'done '+String(text).toLowerCase() : active ? 'running' : '');
-      cell.arrival.textContent = done ? fmt(r.latency)+' s' : active ? fmt(elapsed)+' s' : '—';
-      cell.line.style.transform = `scaleX(${done ? 1 : active ? Math.min(.96,elapsed/Math.max(.001,r.latency)) : 0})`;
-      cell.root.dataset.state = done ? 'done' : active ? 'running' : 'queued';
-    }));
-    $('timeline').value = current;
-    $('time').textContent = `${fmt(current)} / ${fmt(duration)} s`;
-    $('selected-results').innerHTML = keys.map(key=>resultHTML(data.rows[selected],key,current)).join('');
-    $('play').innerHTML = playing ? 'Pause replay <span aria-hidden="true">Ⅱ</span>' : 'Play replay <span aria-hidden="true">▶</span>';
-    $('completion-note').textContent = current >= duration ? 'All 20 responses received. Inspect any search term.' : 'Each result appears at its recorded completion time.';
-    flow(visualTime,current < duration);
+    queues.forEach(q=>{const count=ordered.filter(row=>row.decision===q&&row.end<=Math.min(current,30)).length;state.counts[q]=count;$('out-'+q).textContent=count});
+    $('clock').textContent=Math.min(30,current).toFixed(2).padStart(5,'0');
+    $('clock-progress').style.transform=`scaleX(${Math.min(1,current/30)})`;
+    $('clock-label').textContent=current>=30?'WINDOW CLOSED · RESULTS BELOW':'RECORDED API RUN · TRUE 1×';
+    $('timeline').value=current;$('time').textContent=`${current.toFixed(2)} / 36 s`;
+    $('play').textContent=playing?'Pause replay Ⅱ':'Play replay ▶';
+    $('workflow').hidden=current>=30;$('outcome').hidden=current<30;
+    renderFeed(current);renderReference(current);state.focusId=focusId;
+    if(current>=30){
+      const p=film?ease((current-30)/.7):1;
+      $('outcome').style.opacity=String(p);$('outcome').style.transform=`translateY(${(1-p)*16}px) scale(${film?1+(current-30)*.0015:1})`;
+    }
+    if(!film){recordList(current);$('selected-results').innerHTML=keys.map(key=>resultHTML(data.rows[selected],key)).join('')}
     window.demoState=state;
+    return state;
   }
-  function filmFrame(frame,fps=30) {
-    const t=frame/fps;
-    const at=Math.min(duration,Math.max(0,t-2)*duration/raceSeconds);
-    render(at,t);
-    const summary=t>=summaryStart;
-    $('race').hidden=summary;
-    $('film-summary').hidden=!summary;
-    document.querySelector('.hero').classList.toggle('summary-hero',summary);
-    if (summary) {
-      const j=data.models.jev,o=data.models.opus;
-      $('eyebrow').textContent='THE RESULT / ONE RECORDED RUN';
-      $('headline').innerHTML=j.elapsed < o.elapsed ? 'The same queue. <em>Less waiting.</em>' : 'Ten decisions. <em>Measured, openly.</em>';
-      $('subhead').textContent=`JEV ${fmt(j.elapsed)} s · Opus 5 ${fmt(o.elapsed)} s · API cost ${money(j.costUSD)} vs ${money(o.costUSD)}`;
-      const phase=t-summaryStart;
-      const index=Math.min(9,Math.floor(phase/Math.max(2,(40-summaryStart)/3))*3);
-      const row=data.rows[index];
-      $('film-detail').innerHTML=`<p class="eyebrow">DECISION ${String(index+1).padStart(2,'0')} / 10 · ACTUAL MODEL OUTPUT</p><div class="focus-query">“${escape(query(row))}”</div><div class="focus-routes">${keys.map(key=>`<div class="focus-route ${key}">${escape(data.models[key].label)} <span aria-hidden="true">→</span><strong>${escape(decision(row[key]))}</strong><small>${fmt(row[key].latency)} s · ${money(row[key].costUSD)}</small></div>`).join('')}</div>`;
-      // A steady push keeps the inspected input in focus throughout the reading beat.
-      $('film-detail').style.transform=`translateX(${Math.sin(phase*.2)*8}px) scale(${1+phase*.0012})`;
-    } else {
-      $('eyebrow').textContent=t<2?'YOUR SEARCH TERMS ARE A DECISION QUEUE.':'TEN IDENTICAL INPUTS / RESPONSES ARRIVE AT RECORDED TIMES';
-      $('headline').innerHTML=t<2?`10 decisions. <em>${fmt(data.models.jev.elapsed)} seconds.</em>`: at >= data.models.jev.end-origin && at < data.models.opus.end-origin ? `JEV finished. <em>Opus: ${laneState('opus',at).completed} of 10.</em>`:'Keep. Exclude. Review. <em>Watch both.</em>';
-      $('subhead').textContent='Synthetic Waco junk-removal searches. EXCLUDE = candidate for human approval.';
-    }
-    window.demoState.filmTime=t;
-    window.demoState.phase=summary?'summary':'race';
-    return window.demoState;
-  }
-  function tick(now) {
-    if (playing) {
-      const next=current+(now-lastTick)/1000;
-      if(next>=duration)playing=false;
-      render(next);
-    }
-    lastTick=now;
-    if(!film)requestAnimationFrame(tick);
-  }
+  function tick(now){if(playing){const next=current+(now-lastTick)/1000;if(next>=36)playing=false;render(next)}lastTick=now;if(!film)requestAnimationFrame(tick)}
   async function init() {
-    const response=await fetch('benchmark.json');
-    if(!response.ok)throw Error('Recorded evidence is unavailable ('+response.status+').');
-    data=await response.json();
-    if(data.status!=='complete'||data.rows?.length!==10)throw Error('The recorded run is incomplete. Results are not ready for replay.');
-    for(const row of data.rows)for(const key of keys)if(!Number.isFinite(row[key]?.start)||!Number.isFinite(row[key]?.end)||!['KEEP','EXCLUDE','REVIEW'].includes(decision(row[key])))throw Error('Recorded evidence failed validation.');
-    origin=Math.min(...keys.map(key=>data.models[key].start));
-    duration=Math.max(...keys.map(key=>data.models[key].end))-origin;
-    raceSeconds=Math.min(32,duration); summaryStart=2+raceSeconds;
-    $('timeline').max=duration;
-    $('rows').innerHTML=data.rows.map((row,i)=>`<div class="term-row" data-row="${i}"><button class="term-button" type="button" aria-pressed="false" aria-label="Inspect input ${i+1}: ${escape(query(row))}"><span class="row-id">${String(i+1).padStart(2,'0')}</span><span class="query">${escape(query(row))}</span></button>${keys.map(key=>`<div class="decision-cell ${key}" data-key="${key}"><span class="status">QUEUED</span><span class="arrival"></span><i class="workline"></i></div>`).join('')}</div>`).join('');
-    document.querySelectorAll('.term-row').forEach((row,i)=>{
-      row.querySelector('button').addEventListener('click',()=>{inspect(i);render(current)});
-      cells[i]={};keys.forEach(key=>{const root=row.querySelector(`[data-key="${key}"]`);cells[i][key]={root,status:root.querySelector('.status'),arrival:root.querySelector('.arrival'),line:root.querySelector('.workline')};});
-    });
-    const j=data.models.jev,o=data.models.opus;
-    const matches=key=>data.rows.filter(row=>decision(row[key])===row.expectedDecision).length;
-    const ratio=j.elapsed ? o.elapsed/j.elapsed : 0;
-    const costRatio=j.costUSD ? o.costUSD/j.costUSD : 0;
-    $('summary-metrics').innerHTML=`<div class="summary-metric"><strong>${ratio>=1 ? ratio.toFixed(1)+'×' : fmt(j.elapsed)+' s'}</strong><span>${ratio>=1?'JEV queue speedup':'JEV queue time'}</span></div><div class="summary-metric"><strong>${costRatio>=1?costRatio.toFixed(1)+'×':money(j.costUSD)}</strong><span>${costRatio>=1?'Opus / JEV API cost':'JEV API cost'}</span></div><div class="summary-metric"><strong>${matches('jev')} / 10</strong><span>Both models match authored labels</span></div>`;
-    const basis=[...new Set(keys.flatMap(key=>[].concat(data.models[key].cost_basis)))].join(' / ');
-    const temperature=typeof data.conditions.temperature==='object' ? keys.map(key=>`${data.models[key].label}: ${data.conditions.temperature[key]}`).join(' · ') : String(data.conditions.temperature);
-    $('cost-note').textContent=`API cost: ${basis}. Billed responses only.`;
-    $('replay-label').textContent=film&&duration>32?`Recorded replay · ${(duration/32).toFixed(2)}× BOTH lanes`:'Recorded replay · 1× speed';
-    $('method-details').innerHTML=`<dl><dt>Model identifiers</dt><dd>JEV: ${escape(j.model)}<br>Opus 5: ${escape(o.model)}</dd><dt>Conditions</dt><dd>${escape(data.conditions.provider)} · temperature ${escape(temperature)} · concurrency ${escape(data.conditions.concurrencyPerModel)} per model<br>Queues started ${data.conditions.queuesStartedConcurrently?'concurrently':'sequentially'} · Opus reasoning ${escape(data.conditions.opusReasoning)}<br>${escape(data.conditions.limitations || '')}</dd><dt>Business brief</dt><dd>${escape(data.dataset.business)}<br>${escape(data.dataset.instructions)}<br>${escape(data.dataset.workflow || '')}</dd><dt>Cost and timing</dt><dd>${escape(basis)}. Clock: queue wall time. Row timing: individual request latency. Network and provider latency included. Costs tick only at completed responses.</dd><dt>Reference labels</dt><dd>Authored for these synthetic examples, not independent evaluation. JEV ${matches('jev')}/10 · Opus 5 ${matches('opus')}/10 matches.</dd><dt>Evidence identity</dt><dd>Dataset ${escape(data.dataset.id)}<br>SHA-256 ${escape(data.dataset.sha256)}</dd></dl>`;
-    $('loading').hidden=true;$('experience').hidden=false;
-    inspect(0);render(0);
-    $('play').addEventListener('click',()=>{if(current>=duration)current=0;playing=!playing;lastTick=performance.now();render(current)});
-    $('restart').addEventListener('click',()=>{playing=false;render(0);inspect(0)});
+    const response=await fetch('benchmark.json');if(!response.ok)throw Error(`Recorded evidence unavailable (${response.status}).`);data=await response.json();
+    if(data.status!=='complete'||data.product?.audit?.status!=='pass'||data.schemaVersion!==2||data.windowSeconds!==30||!Array.isArray(data.product?.rows))throw Error('Recorded product evidence is incomplete.');
+    for(const row of data.rows)for(const key of keys){const c=row[key];if(c?.status==='complete'&&(!Number.isFinite(c.start)||!Number.isFinite(c.end)||!Number.isFinite(c.costUSD)||!c.requestId))throw Error('A recorded receipt is missing timing, cost or identity.')}
+    productById=new Map(data.product.rows.map(row=>[row.id,row]));ordered=[...data.product.rows].sort((a,b)=>a.end-b.end);
+    for(const row of ordered)if(!queues.includes(row.decision)||!Number.isFinite(row.end)||!data.rows.some(r=>r.id===row.id&&complete(r.jev,30)))throw Error('Product output does not match a completed JEV receipt.');
+    $('input-track').innerHTML=data.rows.map((row,i)=>`<div class="input-card"><small>INPUT ${String(i+1).padStart(3,'0')} · ${escape(row.category)}</small><strong>${escape(query(row))}</strong></div>`).join('');
+    const referenceLabels={KEEP:'keep',EXCLUDE:'negative_candidate',REVIEW:'review'};
+    const disagreements=ordered.filter(row=>row.classification!==referenceLabels[row.referenceDecision]);
+    $('disagreement-note').textContent=`${disagreements.length} labels differ from authored references; ${disagreements.filter(row=>row.decision==='review').length} routed to human review.`;
+    const basis=keys.map(key=>`${data.models[key].label}: ${data.models[key].model}`).join(' · ');
+    $('method-details').innerHTML=`<dl><dt>Input provenance</dt><dd>${data.rows.length} unique synthetic search terms. Authored labels and business reasons are reviewer references, not independent evaluation or model rationale.</dd><dt>Recorded models</dt><dd>${escape(basis)}</dd><dt>Fair window</dt><dd>Both serial queues receive the same ordered inputs, starting from a shared clock. This is a true 30-second window at 1×. Only successful API responses completed by 30 seconds enter the counters. Requests finishing after the window remain separately inspectable and are excluded from counts and window cost.</dd><dt>Product integration</dt><dd>${escape(data.product.source)}. JEV confidence below ${data.product.confidenceThreshold} routes to review. Confidence is a model output, not a calibrated probability. Negative candidates require human approval; no ad account changes.</dd><dt>API cost</dt><dd>Cost basis: ${keys.map(key=>escape(data.models[key].label+': '+data.models[key].cost_basis.join(', '))).join(' · ')}; totals include completed in-window responses only. Cost per decision divides that total by completed responses. Late-response spend: JEV ${money(data.models.jev.inflightCostUSD||0)}, Opus 5 ${money(data.models.opus.inflightCostUSD||0)}. One run, not a claim of typical latency, accuracy, savings or ROI.</dd><dt>Reproduce and inspect</dt><dd>The downloadable product output is the actual engine result. The benchmark JSON retains inputs, references, API receipt IDs and timing. The page makes no model calls.</dd><dt>Full recorded conditions</dt><dd><pre>${escape(JSON.stringify(data.conditions||{},null,2))}</pre></dd></dl>`;
+    $('headline').innerHTML=`${data.models.jev.completed} search terms.<br><em>Clear next actions.</em>`;
+    $('loading').hidden=true;$('experience').hidden=false;inspect(0);render(0);
+    $('play').addEventListener('click',()=>{if(current>=36)current=0;playing=!playing;lastTick=performance.now();render(current)});
+    $('restart').addEventListener('click',()=>{playing=false;filter='all';document.querySelectorAll('[data-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.filter==='all')));render(0);inspect(0)});
     $('timeline').addEventListener('input',event=>{playing=false;render(Number(event.target.value))});
-    window.renderFrame=filmFrame;
-    if(film)filmFrame(0);else requestAnimationFrame(tick);
+    document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));render(current)}));
+    window.renderFrame=(frame,fps=30)=>render(frame/fps);
+    if(!film)requestAnimationFrame(tick);
   }
   init().catch(error=>{$('loading').textContent=error.message;window.demoState={ready:false,error:error.message};console.error(error.message)});
 })();
