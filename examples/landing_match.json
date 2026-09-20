@@ -1,0 +1,15 @@
+{
+  "as_of": "2026-09-20",
+  "records": [
+    {
+      "id": "page-01",
+      "ad_text": "Simple appointment scheduling. Start a free 14-day trial.",
+      "landing_text": "Simple appointment scheduling for service businesses. Start a free 14-day trial with reminders included. No credit card required."
+    },
+    {
+      "id": "page-02",
+      "ad_text": "Get a free booking demo today.",
+      "landing_text": "Enterprise analytics dashboards. Contact our sales team for annual pricing."
+    }
+  ]
+}

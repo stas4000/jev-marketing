@@ -1,0 +1,27 @@
+{
+  "as_of": "2026-09-20",
+  "records": [
+    {
+      "id": "ad-01",
+      "text": "Tired of missed appointments? Try simple booking reminders free for 14 days.",
+      "creative_format": "video",
+      "start_date": "2026-06-01",
+      "active": true
+    },
+    {
+      "id": "ad-02",
+      "text": "Customers rated our scheduling dashboard 4.8 out of 5 in this fictional example. Book a demo.",
+      "creative_format": "image",
+      "start_date": "2026-08-01",
+      "end_date": "2026-08-20",
+      "active": false
+    },
+    {
+      "id": "ad-03",
+      "text": "Save 20% on appointment scheduling this week.",
+      "creative_format": "carousel",
+      "start_date": "2026-09-15",
+      "active": true
+    }
+  ]
+}

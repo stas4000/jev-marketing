@@ -1,0 +1,26 @@
+{
+  "as_of": "2026-09-20",
+  "brand": {
+    "name": "Flowdesk (fictional)",
+    "description": "Scheduling software for small service businesses. Clear reminders and simple booking, without unsupported promises.",
+    "keywords": [
+      "scheduling",
+      "booking",
+      "appointment"
+    ]
+  },
+  "records": [
+    {
+      "id": "brief-01",
+      "hook": "Make missed appointments a thing of the past.",
+      "body": "Show a service business owner sending clear booking reminders from the scheduling dashboard. Demonstrate the real reminder setup.",
+      "cta": "Start a free 14-day trial"
+    },
+    {
+      "id": "brief-02",
+      "hook": "Win big",
+      "body": "Guaranteed overnight growth.",
+      "cta": "Click"
+    }
+  ]
+}

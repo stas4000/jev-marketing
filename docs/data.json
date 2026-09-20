@@ -1,0 +1,1196 @@
+{
+  "synthetic": true,
+  "workflows": {
+    "ad_tags": {
+      "input": {
+        "as_of": "2026-09-20",
+        "records": [
+          {
+            "id": "ad-01",
+            "text": "Tired of missed appointments? Try simple booking reminders free for 14 days.",
+            "creative_format": "video",
+            "start_date": "2026-06-01",
+            "active": true
+          },
+          {
+            "id": "ad-02",
+            "text": "Customers rated our scheduling dashboard 4.8 out of 5 in this fictional example. Book a demo.",
+            "creative_format": "image",
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-20",
+            "active": false
+          },
+          {
+            "id": "ad-03",
+            "text": "Save 20% on appointment scheduling this week.",
+            "creative_format": "carousel",
+            "start_date": "2026-09-15",
+            "active": true
+          }
+        ]
+      },
+      "output": {
+        "schema_version": "1.0",
+        "workflow": "ad_tags",
+        "mode": "demo",
+        "method": "demo_heuristic",
+        "as_of": "2026-09-20",
+        "confidence_threshold": 0.7,
+        "limits": [
+          "Imported records only, not a complete ad library. Tags are judgments; days observed are not profitability.",
+          "DEMO ONLY: deterministic lexical rules. Jev was not called. Confidence is an illustrative fixed 0.5, not calibrated."
+        ],
+        "rows": [
+          {
+            "id": "ad-01",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "ad-01",
+              "input_fields": [
+                "id",
+                "text",
+                "creative_format",
+                "start_date",
+                "active"
+              ],
+              "answers": {
+                "hook": {
+                  "type": "choice",
+                  "choice": "problem",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "problem": 1.0,
+                    "benefit": 0.0,
+                    "proof": 0.0,
+                    "curiosity": 0.0,
+                    "other": 0.0
+                  }
+                },
+                "format": {
+                  "type": "choice",
+                  "choice": "video",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "video": 1.0,
+                    "image": 0.0,
+                    "carousel": 0.0,
+                    "text": 0.0,
+                    "unknown": 0.0
+                  }
+                },
+                "offer": {
+                  "type": "choice",
+                  "choice": "product",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "discount": 0.0,
+                    "trial": 0.0,
+                    "content": 0.0,
+                    "product": 1.0,
+                    "unclear": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "tags": {
+              "hook": "problem",
+              "format": "video",
+              "offer": "product"
+            },
+            "observed_days": 111
+          },
+          {
+            "id": "ad-02",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "ad-02",
+              "input_fields": [
+                "id",
+                "text",
+                "creative_format",
+                "start_date",
+                "end_date",
+                "active"
+              ],
+              "answers": {
+                "hook": {
+                  "type": "choice",
+                  "choice": "proof",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "problem": 0.0,
+                    "benefit": 0.0,
+                    "proof": 1.0,
+                    "curiosity": 0.0,
+                    "other": 0.0
+                  }
+                },
+                "format": {
+                  "type": "choice",
+                  "choice": "image",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "video": 0.0,
+                    "image": 1.0,
+                    "carousel": 0.0,
+                    "text": 0.0,
+                    "unknown": 0.0
+                  }
+                },
+                "offer": {
+                  "type": "choice",
+                  "choice": "trial",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "discount": 0.0,
+                    "trial": 1.0,
+                    "content": 0.0,
+                    "product": 0.0,
+                    "unclear": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "tags": {
+              "hook": "proof",
+              "format": "image",
+              "offer": "trial"
+            },
+            "observed_days": 19
+          },
+          {
+            "id": "ad-03",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "ad-03",
+              "input_fields": [
+                "id",
+                "text",
+                "creative_format",
+                "start_date",
+                "active"
+              ],
+              "answers": {
+                "hook": {
+                  "type": "choice",
+                  "choice": "benefit",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "problem": 0.0,
+                    "benefit": 1.0,
+                    "proof": 0.0,
+                    "curiosity": 0.0,
+                    "other": 0.0
+                  }
+                },
+                "format": {
+                  "type": "choice",
+                  "choice": "carousel",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "video": 0.0,
+                    "image": 0.0,
+                    "carousel": 1.0,
+                    "text": 0.0,
+                    "unknown": 0.0
+                  }
+                },
+                "offer": {
+                  "type": "choice",
+                  "choice": "discount",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "discount": 1.0,
+                    "trial": 0.0,
+                    "content": 0.0,
+                    "product": 0.0,
+                    "unclear": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "tags": {
+              "hook": "benefit",
+              "format": "carousel",
+              "offer": "discount"
+            },
+            "observed_days": 5
+          }
+        ],
+        "usage": {
+          "calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "seconds": null,
+          "elapsed_seconds": null,
+          "receipts": []
+        }
+      }
+    },
+    "survival": {
+      "input": {
+        "as_of": "2026-09-20",
+        "records": [
+          {
+            "id": "veteran-video",
+            "format": "video",
+            "start_date": "2026-07-01",
+            "active": true
+          },
+          {
+            "id": "ended-video",
+            "format": "video",
+            "start_date": "2026-07-01",
+            "end_date": "2026-07-20",
+            "active": false
+          },
+          {
+            "id": "young-video",
+            "format": "video",
+            "start_date": "2026-09-10",
+            "active": true
+          },
+          {
+            "id": "boundary-image",
+            "format": "image",
+            "start_date": "2026-07-22",
+            "end_date": "2026-09-20",
+            "active": false
+          },
+          {
+            "id": "young-image",
+            "format": "image",
+            "start_date": "2026-09-18",
+            "active": true
+          }
+        ]
+      },
+      "output": {
+        "schema_version": "1.0",
+        "workflow": "survival",
+        "mode": "demo",
+        "method": "validated_math",
+        "as_of": "2026-09-20",
+        "confidence_threshold": 0.7,
+        "limits": [
+          "Descriptive 60-day longevity in this supplied cohort only. Selection/survivor bias can dominate. Not calibrated survival odds or profitability."
+        ],
+        "rows": [
+          {
+            "id": "veteran-video",
+            "confidence": null,
+            "evidence": {
+              "source_id": "veteran-video",
+              "start_date": "2026-07-01",
+              "observed_until": "2026-09-20",
+              "active": true
+            },
+            "decision": "reached_60_days",
+            "format": "video",
+            "observed_days": 81,
+            "eligible": true
+          },
+          {
+            "id": "ended-video",
+            "confidence": null,
+            "evidence": {
+              "source_id": "ended-video",
+              "start_date": "2026-07-01",
+              "observed_until": "2026-07-20",
+              "active": false
+            },
+            "decision": "ended_before_60_days",
+            "format": "video",
+            "observed_days": 19,
+            "eligible": true
+          },
+          {
+            "id": "young-video",
+            "confidence": null,
+            "evidence": {
+              "source_id": "young-video",
+              "start_date": "2026-09-10",
+              "observed_until": "2026-09-20",
+              "active": true
+            },
+            "decision": "censored",
+            "format": "video",
+            "observed_days": 10,
+            "eligible": false
+          },
+          {
+            "id": "boundary-image",
+            "confidence": null,
+            "evidence": {
+              "source_id": "boundary-image",
+              "start_date": "2026-07-22",
+              "observed_until": "2026-09-20",
+              "active": false
+            },
+            "decision": "reached_60_days",
+            "format": "image",
+            "observed_days": 60,
+            "eligible": true
+          },
+          {
+            "id": "young-image",
+            "confidence": null,
+            "evidence": {
+              "source_id": "young-image",
+              "start_date": "2026-09-18",
+              "observed_until": "2026-09-20",
+              "active": true
+            },
+            "decision": "censored",
+            "format": "image",
+            "observed_days": 2,
+            "eligible": false
+          }
+        ],
+        "usage": {
+          "calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "seconds": null,
+          "elapsed_seconds": null,
+          "receipts": []
+        },
+        "summary": [
+          {
+            "format": "image",
+            "total": 2,
+            "eligible": 1,
+            "reached_60_days": 1,
+            "ended_before_60_days": 0,
+            "censored": 1,
+            "observed_60_day_rate": 1.0
+          },
+          {
+            "format": "video",
+            "total": 3,
+            "eligible": 2,
+            "reached_60_days": 1,
+            "ended_before_60_days": 1,
+            "censored": 1,
+            "observed_60_day_rate": 0.5
+          }
+        ]
+      }
+    },
+    "briefs": {
+      "input": {
+        "as_of": "2026-09-20",
+        "brand": {
+          "name": "Flowdesk (fictional)",
+          "description": "Scheduling software for small service businesses. Clear reminders and simple booking, without unsupported promises.",
+          "keywords": [
+            "scheduling",
+            "booking",
+            "appointment"
+          ]
+        },
+        "records": [
+          {
+            "id": "brief-01",
+            "hook": "Make missed appointments a thing of the past.",
+            "body": "Show a service business owner sending clear booking reminders from the scheduling dashboard. Demonstrate the real reminder setup.",
+            "cta": "Start a free 14-day trial"
+          },
+          {
+            "id": "brief-02",
+            "hook": "Win big",
+            "body": "Guaranteed overnight growth.",
+            "cta": "Click"
+          }
+        ]
+      },
+      "output": {
+        "schema_version": "1.0",
+        "workflow": "briefs",
+        "mode": "demo",
+        "method": "demo_heuristic",
+        "as_of": "2026-09-20",
+        "confidence_threshold": 0.7,
+        "limits": [
+          "Rubric scores are judgments, not predictions of ad survival, performance, or conversion lift.",
+          "DEMO ONLY: deterministic lexical rules. Jev was not called. Confidence is an illustrative fixed 0.5, not calibrated."
+        ],
+        "rows": [
+          {
+            "id": "brief-01",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "brief-01",
+              "input_fields": [
+                "id",
+                "hook",
+                "body",
+                "cta"
+              ],
+              "answers": {
+                "hook": {
+                  "type": "score",
+                  "score": 2,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 0.0,
+                    "2": 1.0
+                  }
+                },
+                "brand_fit": {
+                  "type": "score",
+                  "score": 2,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 0.0,
+                    "2": 1.0
+                  }
+                },
+                "readiness": {
+                  "type": "score",
+                  "score": 2,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 0.0,
+                    "2": 1.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "scores": {
+              "hook": 100.0,
+              "brand_fit": 100.0,
+              "readiness": 100.0
+            },
+            "score": 100.0
+          },
+          {
+            "id": "brief-02",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "brief-02",
+              "input_fields": [
+                "id",
+                "hook",
+                "body",
+                "cta"
+              ],
+              "answers": {
+                "hook": {
+                  "type": "score",
+                  "score": 1,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 1.0,
+                    "2": 0.0
+                  }
+                },
+                "brand_fit": {
+                  "type": "score",
+                  "score": 0,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 1.0,
+                    "1": 0.0,
+                    "2": 0.0
+                  }
+                },
+                "readiness": {
+                  "type": "score",
+                  "score": 1,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 1.0,
+                    "2": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "scores": {
+              "hook": 50.0,
+              "brand_fit": 0.0,
+              "readiness": 50.0
+            },
+            "score": 33.33
+          }
+        ],
+        "usage": {
+          "calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "seconds": null,
+          "elapsed_seconds": null,
+          "receipts": []
+        }
+      }
+    },
+    "search_terms": {
+      "input": {
+        "as_of": "2026-09-20",
+        "brand": {
+          "name": "Flowdesk (fictional)",
+          "description": "Scheduling software for small service businesses. Clear reminders and simple booking, without unsupported promises.",
+          "keywords": [
+            "scheduling",
+            "booking",
+            "appointment"
+          ]
+        },
+        "records": [
+          {
+            "id": "query-01",
+            "query": "appointment scheduling for small businesses",
+            "impressions": 2400,
+            "clicks": 120,
+            "cost": 180.0,
+            "conversions": 8.5
+          },
+          {
+            "id": "query-02",
+            "query": "remote jobs salary",
+            "impressions": 700,
+            "clicks": 40,
+            "cost": 32.0,
+            "conversions": 0
+          },
+          {
+            "id": "query-03",
+            "query": "calendar ideas",
+            "impressions": 500,
+            "clicks": 10,
+            "cost": 12.0,
+            "conversions": 0
+          }
+        ]
+      },
+      "output": {
+        "schema_version": "1.0",
+        "workflow": "search_terms",
+        "mode": "demo",
+        "method": "demo_heuristic",
+        "as_of": "2026-09-20",
+        "confidence_threshold": 0.7,
+        "limits": [
+          "Negative keyword candidates require human review. No keyword match types inferred and no ad accounts changed.",
+          "DEMO ONLY: deterministic lexical rules. Jev was not called. Confidence is an illustrative fixed 0.5, not calibrated."
+        ],
+        "rows": [
+          {
+            "id": "query-01",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "query-01",
+              "input_fields": [
+                "id",
+                "query",
+                "impressions",
+                "clicks",
+                "cost",
+                "conversions"
+              ],
+              "answers": {
+                "relevance": {
+                  "type": "choice",
+                  "choice": "keep",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "keep": 1.0,
+                    "review": 0.0,
+                    "negative_candidate": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "query": "appointment scheduling for small businesses",
+            "classification": "keep"
+          },
+          {
+            "id": "query-02",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "query-02",
+              "input_fields": [
+                "id",
+                "query",
+                "impressions",
+                "clicks",
+                "cost",
+                "conversions"
+              ],
+              "answers": {
+                "relevance": {
+                  "type": "choice",
+                  "choice": "negative_candidate",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "keep": 0.0,
+                    "review": 0.0,
+                    "negative_candidate": 1.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "query": "remote jobs salary",
+            "classification": "negative_candidate"
+          },
+          {
+            "id": "query-03",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "query-03",
+              "input_fields": [
+                "id",
+                "query",
+                "impressions",
+                "clicks",
+                "cost",
+                "conversions"
+              ],
+              "answers": {
+                "relevance": {
+                  "type": "choice",
+                  "choice": "review",
+                  "confidence": 0.5,
+                  "probabilities": {
+                    "keep": 0.0,
+                    "review": 1.0,
+                    "negative_candidate": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "query": "calendar ideas",
+            "classification": "review"
+          }
+        ],
+        "usage": {
+          "calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "seconds": null,
+          "elapsed_seconds": null,
+          "receipts": []
+        },
+        "negative_keyword_candidates": []
+      }
+    },
+    "fatigue": {
+      "input": {
+        "as_of": "2026-09-20",
+        "records": [
+          {
+            "id": "creative-01",
+            "prior": {
+              "start_date": "2026-09-01",
+              "end_date": "2026-09-07",
+              "impressions": 12000,
+              "clicks": 360,
+              "reach": 6000
+            },
+            "current": {
+              "start_date": "2026-09-08",
+              "end_date": "2026-09-14",
+              "impressions": 16000,
+              "clicks": 240,
+              "reach": 4000
+            }
+          },
+          {
+            "id": "creative-02",
+            "prior": {
+              "start_date": "2026-09-01",
+              "end_date": "2026-09-07",
+              "impressions": 2000,
+              "clicks": 60,
+              "reach": 1000
+            },
+            "current": {
+              "start_date": "2026-09-08",
+              "end_date": "2026-09-14",
+              "impressions": 2400,
+              "clicks": 72,
+              "reach": 1200
+            }
+          },
+          {
+            "id": "creative-03",
+            "prior": {
+              "start_date": "2026-09-01",
+              "end_date": "2026-09-07",
+              "impressions": 100,
+              "clicks": 3,
+              "reach": 80
+            },
+            "current": {
+              "start_date": "2026-09-08",
+              "end_date": "2026-09-14",
+              "impressions": 150,
+              "clicks": 2,
+              "reach": 70
+            }
+          }
+        ]
+      },
+      "output": {
+        "schema_version": "1.0",
+        "workflow": "fatigue",
+        "mode": "demo",
+        "method": "validated_math",
+        "as_of": "2026-09-20",
+        "confidence_threshold": 0.7,
+        "limits": [
+          "Heuristic alert on comparable supplied windows, not causal proof. Audience, placement, spend and seasonality can confound it."
+        ],
+        "rows": [
+          {
+            "id": "creative-01",
+            "confidence": null,
+            "evidence": {
+              "source_id": "creative-01",
+              "prior": {
+                "start_date": "2026-09-01",
+                "end_date": "2026-09-07",
+                "impressions": 12000,
+                "clicks": 360,
+                "reach": 6000
+              },
+              "current": {
+                "start_date": "2026-09-08",
+                "end_date": "2026-09-14",
+                "impressions": 16000,
+                "clicks": 240,
+                "reach": 4000
+              },
+              "rule": "Each window: >=1000 impressions, >=100 reach; prior >=20 clicks. Refresh: current frequency >=3, frequency rise >=20%, CTR decline >=20%. Replace: same signal plus frequency >=4 and CTR decline >=50%. Otherwise leave; insufficient data => review. Recommendations only. Equal-length non-overlapping windows required."
+            },
+            "suggested_action": "replace",
+            "decision": "review",
+            "prior_frequency": 2.0,
+            "current_frequency": 4.0,
+            "prior_ctr": 0.03,
+            "current_ctr": 0.015,
+            "ctr_relative_decline": 0.5,
+            "frequency_relative_increase": 1.0
+          },
+          {
+            "id": "creative-02",
+            "confidence": null,
+            "evidence": {
+              "source_id": "creative-02",
+              "prior": {
+                "start_date": "2026-09-01",
+                "end_date": "2026-09-07",
+                "impressions": 2000,
+                "clicks": 60,
+                "reach": 1000
+              },
+              "current": {
+                "start_date": "2026-09-08",
+                "end_date": "2026-09-14",
+                "impressions": 2400,
+                "clicks": 72,
+                "reach": 1200
+              },
+              "rule": "Each window: >=1000 impressions, >=100 reach; prior >=20 clicks. Refresh: current frequency >=3, frequency rise >=20%, CTR decline >=20%. Replace: same signal plus frequency >=4 and CTR decline >=50%. Otherwise leave; insufficient data => review. Recommendations only. Equal-length non-overlapping windows required."
+            },
+            "suggested_action": "leave",
+            "decision": "no_signal",
+            "prior_frequency": 2.0,
+            "current_frequency": 2.0,
+            "prior_ctr": 0.03,
+            "current_ctr": 0.03,
+            "ctr_relative_decline": 0.0,
+            "frequency_relative_increase": 0.0
+          },
+          {
+            "id": "creative-03",
+            "confidence": null,
+            "evidence": {
+              "source_id": "creative-03",
+              "prior": {
+                "start_date": "2026-09-01",
+                "end_date": "2026-09-07",
+                "impressions": 100,
+                "clicks": 3,
+                "reach": 80
+              },
+              "current": {
+                "start_date": "2026-09-08",
+                "end_date": "2026-09-14",
+                "impressions": 150,
+                "clicks": 2,
+                "reach": 70
+              },
+              "rule": "Each window: >=1000 impressions, >=100 reach; prior >=20 clicks. Refresh: current frequency >=3, frequency rise >=20%, CTR decline >=20%. Replace: same signal plus frequency >=4 and CTR decline >=50%. Otherwise leave; insufficient data => review. Recommendations only. Equal-length non-overlapping windows required."
+            },
+            "suggested_action": "review",
+            "decision": "insufficient_data",
+            "prior_frequency": 1.25,
+            "current_frequency": 2.142857142857143,
+            "prior_ctr": 0.03,
+            "current_ctr": 0.013333333333333334,
+            "ctr_relative_decline": 0.5555555555555555,
+            "frequency_relative_increase": 0.7142857142857142
+          }
+        ],
+        "usage": {
+          "calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "seconds": null,
+          "elapsed_seconds": null,
+          "receipts": []
+        }
+      }
+    },
+    "landing_match": {
+      "input": {
+        "as_of": "2026-09-20",
+        "records": [
+          {
+            "id": "page-01",
+            "ad_text": "Simple appointment scheduling. Start a free 14-day trial.",
+            "landing_text": "Simple appointment scheduling for service businesses. Start a free 14-day trial with reminders included. No credit card required."
+          },
+          {
+            "id": "page-02",
+            "ad_text": "Get a free booking demo today.",
+            "landing_text": "Enterprise analytics dashboards. Contact our sales team for annual pricing."
+          }
+        ]
+      },
+      "output": {
+        "schema_version": "1.0",
+        "workflow": "landing_match",
+        "mode": "demo",
+        "method": "demo_heuristic",
+        "as_of": "2026-09-20",
+        "confidence_threshold": 0.7,
+        "limits": [
+          "Supplied text only. No page fetching or visual, legal, tracking, accessibility, or conversion audit.",
+          "DEMO ONLY: deterministic lexical rules. Jev was not called. Confidence is an illustrative fixed 0.5, not calibrated."
+        ],
+        "rows": [
+          {
+            "id": "page-01",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "page-01",
+              "input_fields": [
+                "id",
+                "ad_text",
+                "landing_text"
+              ],
+              "answers": {
+                "promise_match": {
+                  "type": "score",
+                  "score": 2,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 0.0,
+                    "2": 1.0
+                  }
+                },
+                "cta_match": {
+                  "type": "score",
+                  "score": 2,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 0.0,
+                    "2": 1.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "scores": {
+              "promise_match": 100.0,
+              "cta_match": 100.0
+            },
+            "score": 100.0
+          },
+          {
+            "id": "page-02",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "page-02",
+              "input_fields": [
+                "id",
+                "ad_text",
+                "landing_text"
+              ],
+              "answers": {
+                "promise_match": {
+                  "type": "score",
+                  "score": 0,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 1.0,
+                    "1": 0.0,
+                    "2": 0.0
+                  }
+                },
+                "cta_match": {
+                  "type": "score",
+                  "score": 0,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 1.0,
+                    "1": 0.0,
+                    "2": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "scores": {
+              "promise_match": 0.0,
+              "cta_match": 0.0
+            },
+            "score": 0.0
+          }
+        ],
+        "usage": {
+          "calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "seconds": null,
+          "elapsed_seconds": null,
+          "receipts": []
+        }
+      }
+    },
+    "leads": {
+      "input": {
+        "as_of": "2026-09-20",
+        "icp": {
+          "industry": "service businesses",
+          "company_size": "5 to 20 staff",
+          "need": "appointment scheduling",
+          "timeline": "this month"
+        },
+        "records": [
+          {
+            "id": "lead-01",
+            "business_facts": {
+              "company": "Fictional Repair Co",
+              "industry": "service businesses",
+              "company_size": "5 to 20 staff",
+              "need": "appointment scheduling",
+              "budget": "100 per month",
+              "timeline": "this month"
+            }
+          },
+          {
+            "id": "lead-02",
+            "business_facts": {
+              "company": "Fictional Factory",
+              "industry": "manufacturing",
+              "need": "inventory forecasting"
+            }
+          },
+          {
+            "id": "lead-03",
+            "business_facts": {
+              "company": "Fictional Studio",
+              "industry": "service businesses"
+            }
+          }
+        ]
+      },
+      "output": {
+        "schema_version": "1.0",
+        "workflow": "leads",
+        "mode": "demo",
+        "method": "demo_heuristic",
+        "as_of": "2026-09-20",
+        "confidence_threshold": 0.7,
+        "limits": [
+          "Business facts versus the supplied ICP only. No enrichment, protected-trait scoring, or automatic rejection.",
+          "DEMO ONLY: deterministic lexical rules. Jev was not called. Confidence is an illustrative fixed 0.5, not calibrated."
+        ],
+        "rows": [
+          {
+            "id": "lead-01",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "lead-01",
+              "input_fields": [
+                "id",
+                "business_facts"
+              ],
+              "answers": {
+                "icp_fit": {
+                  "type": "score",
+                  "score": 2,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 0.0,
+                    "1": 0.0,
+                    "2": 1.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "scores": {
+              "icp_fit": 100.0
+            },
+            "score": 100.0
+          },
+          {
+            "id": "lead-02",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "lead-02",
+              "input_fields": [
+                "id",
+                "business_facts"
+              ],
+              "answers": {
+                "icp_fit": {
+                  "type": "score",
+                  "score": 0,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 1.0,
+                    "1": 0.0,
+                    "2": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "scores": {
+              "icp_fit": 0.0
+            },
+            "score": 0.0
+          },
+          {
+            "id": "lead-03",
+            "confidence": 0.5,
+            "evidence": {
+              "source_id": "lead-03",
+              "input_fields": [
+                "id",
+                "business_facts"
+              ],
+              "answers": {
+                "icp_fit": {
+                  "type": "score",
+                  "score": 0,
+                  "confidence": 0.5,
+                  "legend": {
+                    "0": "Weak: absent, contradicted, or unsupported",
+                    "1": "Partial: some support, with material gaps",
+                    "2": "Strong: explicit, complete support in supplied facts"
+                  },
+                  "probabilities": {
+                    "0": 1.0,
+                    "1": 0.0,
+                    "2": 0.0
+                  }
+                }
+              }
+            },
+            "decision": "review",
+            "scores": {
+              "icp_fit": 0.0
+            },
+            "score": 0.0
+          }
+        ],
+        "usage": {
+          "calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "cost": null,
+          "seconds": null,
+          "elapsed_seconds": null,
+          "receipts": []
+        }
+      }
+    }
+  }
+}

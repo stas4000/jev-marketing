@@ -1,0 +1,38 @@
+{
+  "as_of": "2026-09-20",
+  "brand": {
+    "name": "Flowdesk (fictional)",
+    "description": "Scheduling software for small service businesses. Clear reminders and simple booking, without unsupported promises.",
+    "keywords": [
+      "scheduling",
+      "booking",
+      "appointment"
+    ]
+  },
+  "records": [
+    {
+      "id": "query-01",
+      "query": "appointment scheduling for small businesses",
+      "impressions": 2400,
+      "clicks": 120,
+      "cost": 180.0,
+      "conversions": 8.5
+    },
+    {
+      "id": "query-02",
+      "query": "remote jobs salary",
+      "impressions": 700,
+      "clicks": 40,
+      "cost": 32.0,
+      "conversions": 0
+    },
+    {
+      "id": "query-03",
+      "query": "calendar ideas",
+      "impressions": 500,
+      "clicks": 10,
+      "cost": 12.0,
+      "conversions": 0
+    }
+  ]
+}

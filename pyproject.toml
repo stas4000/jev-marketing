@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-marketing"
+version = "0.1.0"
+description = "Seven inspectable marketing workflows powered by typed Jev decisions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.scripts]
+jev-marketing = "jev_marketing.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["jev_marketing*"]
+
+[tool.setuptools.package-data]
+jev_marketing = ["fixtures.json"]

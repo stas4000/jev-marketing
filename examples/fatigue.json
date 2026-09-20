@@ -1,0 +1,56 @@
+{
+  "as_of": "2026-09-20",
+  "records": [
+    {
+      "id": "creative-01",
+      "prior": {
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-07",
+        "impressions": 12000,
+        "clicks": 360,
+        "reach": 6000
+      },
+      "current": {
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-14",
+        "impressions": 16000,
+        "clicks": 240,
+        "reach": 4000
+      }
+    },
+    {
+      "id": "creative-02",
+      "prior": {
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-07",
+        "impressions": 2000,
+        "clicks": 60,
+        "reach": 1000
+      },
+      "current": {
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-14",
+        "impressions": 2400,
+        "clicks": 72,
+        "reach": 1200
+      }
+    },
+    {
+      "id": "creative-03",
+      "prior": {
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-07",
+        "impressions": 100,
+        "clicks": 3,
+        "reach": 80
+      },
+      "current": {
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-14",
+        "impressions": 150,
+        "clicks": 2,
+        "reach": 70
+      }
+    }
+  ]
+}

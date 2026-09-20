@@ -1,0 +1,238 @@
+{
+  "ad_tags": {
+    "as_of": "2026-09-20",
+    "records": [
+      {
+        "id": "ad-01",
+        "text": "Tired of missed appointments? Try simple booking reminders free for 14 days.",
+        "creative_format": "video",
+        "start_date": "2026-06-01",
+        "active": true
+      },
+      {
+        "id": "ad-02",
+        "text": "Customers rated our scheduling dashboard 4.8 out of 5 in this fictional example. Book a demo.",
+        "creative_format": "image",
+        "start_date": "2026-08-01",
+        "end_date": "2026-08-20",
+        "active": false
+      },
+      {
+        "id": "ad-03",
+        "text": "Save 20% on appointment scheduling this week.",
+        "creative_format": "carousel",
+        "start_date": "2026-09-15",
+        "active": true
+      }
+    ]
+  },
+  "survival": {
+    "as_of": "2026-09-20",
+    "records": [
+      {
+        "id": "veteran-video",
+        "format": "video",
+        "start_date": "2026-07-01",
+        "active": true
+      },
+      {
+        "id": "ended-video",
+        "format": "video",
+        "start_date": "2026-07-01",
+        "end_date": "2026-07-20",
+        "active": false
+      },
+      {
+        "id": "young-video",
+        "format": "video",
+        "start_date": "2026-09-10",
+        "active": true
+      },
+      {
+        "id": "boundary-image",
+        "format": "image",
+        "start_date": "2026-07-22",
+        "end_date": "2026-09-20",
+        "active": false
+      },
+      {
+        "id": "young-image",
+        "format": "image",
+        "start_date": "2026-09-18",
+        "active": true
+      }
+    ]
+  },
+  "briefs": {
+    "as_of": "2026-09-20",
+    "brand": {
+      "name": "Flowdesk (fictional)",
+      "description": "Scheduling software for small service businesses. Clear reminders and simple booking, without unsupported promises.",
+      "keywords": [
+        "scheduling",
+        "booking",
+        "appointment"
+      ]
+    },
+    "records": [
+      {
+        "id": "brief-01",
+        "hook": "Make missed appointments a thing of the past.",
+        "body": "Show a service business owner sending clear booking reminders from the scheduling dashboard. Demonstrate the real reminder setup.",
+        "cta": "Start a free 14-day trial"
+      },
+      {
+        "id": "brief-02",
+        "hook": "Win big",
+        "body": "Guaranteed overnight growth.",
+        "cta": "Click"
+      }
+    ]
+  },
+  "search_terms": {
+    "as_of": "2026-09-20",
+    "brand": {
+      "name": "Flowdesk (fictional)",
+      "description": "Scheduling software for small service businesses. Clear reminders and simple booking, without unsupported promises.",
+      "keywords": [
+        "scheduling",
+        "booking",
+        "appointment"
+      ]
+    },
+    "records": [
+      {
+        "id": "query-01",
+        "query": "appointment scheduling for small businesses",
+        "impressions": 2400,
+        "clicks": 120,
+        "cost": 180.0,
+        "conversions": 8.5
+      },
+      {
+        "id": "query-02",
+        "query": "remote jobs salary",
+        "impressions": 700,
+        "clicks": 40,
+        "cost": 32.0,
+        "conversions": 0
+      },
+      {
+        "id": "query-03",
+        "query": "calendar ideas",
+        "impressions": 500,
+        "clicks": 10,
+        "cost": 12.0,
+        "conversions": 0
+      }
+    ]
+  },
+  "fatigue": {
+    "as_of": "2026-09-20",
+    "records": [
+      {
+        "id": "creative-01",
+        "prior": {
+          "start_date": "2026-09-01",
+          "end_date": "2026-09-07",
+          "impressions": 12000,
+          "clicks": 360,
+          "reach": 6000
+        },
+        "current": {
+          "start_date": "2026-09-08",
+          "end_date": "2026-09-14",
+          "impressions": 16000,
+          "clicks": 240,
+          "reach": 4000
+        }
+      },
+      {
+        "id": "creative-02",
+        "prior": {
+          "start_date": "2026-09-01",
+          "end_date": "2026-09-07",
+          "impressions": 2000,
+          "clicks": 60,
+          "reach": 1000
+        },
+        "current": {
+          "start_date": "2026-09-08",
+          "end_date": "2026-09-14",
+          "impressions": 2400,
+          "clicks": 72,
+          "reach": 1200
+        }
+      },
+      {
+        "id": "creative-03",
+        "prior": {
+          "start_date": "2026-09-01",
+          "end_date": "2026-09-07",
+          "impressions": 100,
+          "clicks": 3,
+          "reach": 80
+        },
+        "current": {
+          "start_date": "2026-09-08",
+          "end_date": "2026-09-14",
+          "impressions": 150,
+          "clicks": 2,
+          "reach": 70
+        }
+      }
+    ]
+  },
+  "landing_match": {
+    "as_of": "2026-09-20",
+    "records": [
+      {
+        "id": "page-01",
+        "ad_text": "Simple appointment scheduling. Start a free 14-day trial.",
+        "landing_text": "Simple appointment scheduling for service businesses. Start a free 14-day trial with reminders included. No credit card required."
+      },
+      {
+        "id": "page-02",
+        "ad_text": "Get a free booking demo today.",
+        "landing_text": "Enterprise analytics dashboards. Contact our sales team for annual pricing."
+      }
+    ]
+  },
+  "leads": {
+    "as_of": "2026-09-20",
+    "icp": {
+      "industry": "service businesses",
+      "company_size": "5 to 20 staff",
+      "need": "appointment scheduling",
+      "timeline": "this month"
+    },
+    "records": [
+      {
+        "id": "lead-01",
+        "business_facts": {
+          "company": "Fictional Repair Co",
+          "industry": "service businesses",
+          "company_size": "5 to 20 staff",
+          "need": "appointment scheduling",
+          "budget": "100 per month",
+          "timeline": "this month"
+        }
+      },
+      {
+        "id": "lead-02",
+        "business_facts": {
+          "company": "Fictional Factory",
+          "industry": "manufacturing",
+          "need": "inventory forecasting"
+        }
+      },
+      {
+        "id": "lead-03",
+        "business_facts": {
+          "company": "Fictional Studio",
+          "industry": "service businesses"
+        }
+      }
+    ]
+  }
+}

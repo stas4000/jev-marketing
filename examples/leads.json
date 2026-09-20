@@ -1,0 +1,37 @@
+{
+  "as_of": "2026-09-20",
+  "icp": {
+    "industry": "service businesses",
+    "company_size": "5 to 20 staff",
+    "need": "appointment scheduling",
+    "timeline": "this month"
+  },
+  "records": [
+    {
+      "id": "lead-01",
+      "business_facts": {
+        "company": "Fictional Repair Co",
+        "industry": "service businesses",
+        "company_size": "5 to 20 staff",
+        "need": "appointment scheduling",
+        "budget": "100 per month",
+        "timeline": "this month"
+      }
+    },
+    {
+      "id": "lead-02",
+      "business_facts": {
+        "company": "Fictional Factory",
+        "industry": "manufacturing",
+        "need": "inventory forecasting"
+      }
+    },
+    {
+      "id": "lead-03",
+      "business_facts": {
+        "company": "Fictional Studio",
+        "industry": "service businesses"
+      }
+    }
+  ]
+}

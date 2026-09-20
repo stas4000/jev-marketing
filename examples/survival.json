@@ -1,0 +1,37 @@
+{
+  "as_of": "2026-09-20",
+  "records": [
+    {
+      "id": "veteran-video",
+      "format": "video",
+      "start_date": "2026-07-01",
+      "active": true
+    },
+    {
+      "id": "ended-video",
+      "format": "video",
+      "start_date": "2026-07-01",
+      "end_date": "2026-07-20",
+      "active": false
+    },
+    {
+      "id": "young-video",
+      "format": "video",
+      "start_date": "2026-09-10",
+      "active": true
+    },
+    {
+      "id": "boundary-image",
+      "format": "image",
+      "start_date": "2026-07-22",
+      "end_date": "2026-09-20",
+      "active": false
+    },
+    {
+      "id": "young-image",
+      "format": "image",
+      "start_date": "2026-09-18",
+      "active": true
+    }
+  ]
+}
